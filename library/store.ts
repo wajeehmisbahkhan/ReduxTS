@@ -1,9 +1,9 @@
 import { Store } from './interfaces';
-export function createStore<StateType, ActionType>(
-  reducer: (state: StateType, action: ActionType) => StateType
-): Store<StateType, ActionType> {
+export function createStore<State, Action>(
+  reducer: (state: State, action: Action) => State
+): Store<State, Action> {
   // Variables
-  let state: StateType;
+  let state: State;
   let listeners: Array<() => void> = [];
   // Functions
   const getState = () => state;
@@ -15,7 +15,7 @@ export function createStore<StateType, ActionType>(
       }
     };
   };
-  const dispatch = (action: ActionType) => {
+  const dispatch = (action: Action) => {
     state = reducer(state, action);
     listeners.forEach(listener => {
       listener();
