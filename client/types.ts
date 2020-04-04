@@ -1,4 +1,9 @@
-export type State = Array<any>;
+import { Todo, Goal } from './interfaces';
+
+export type State = {
+  todos: Array<Todo>;
+  goals: Array<Goal>;
+};
 export type EventType =
   | 'ADD_TODO'
   | 'REMOVE_TODO'

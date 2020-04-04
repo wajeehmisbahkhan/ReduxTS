@@ -1,13 +1,14 @@
 import { EventType } from './types';
 
 export interface Todo {
-  type: string;
+  id: number;
   title: string;
   complete: boolean;
 }
 export interface Goal {
   id: number;
-  name: string;
+  title: string;
+  complete: boolean;
 }
 export interface Action {
   type: EventType;
